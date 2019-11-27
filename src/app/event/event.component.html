@@ -1,0 +1,9 @@
+{{ eventData.time }} {{ eventData.date }}   {{ eventData.venue }}
+<p *ngFor="let eventPayment of eventPayments | async ">
+    {{eventPayment.personName}}:  {{eventPayment.paidAmount}}
+  </p>
+<input type="text" [(ngModel)]="personValue" placeholder="Persons Name"/>
+<input type="text" [(ngModel)]="amountValue" placeholder="Amount Paid"/>
+<button (click)="createPayment(eventData.time, eventData.date, eventData.venue)">Add Payee</button>
+<button (click)="deleteEvent(eventData.time, eventData.date, eventData.venue)">Delete Event</button>
+
